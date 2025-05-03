@@ -85,7 +85,7 @@ from
 	order by 1
 ) where order_date is not null
 
--- performance anlysis
+-- PERFORMANCE ANALYSIS
 -- current measure - target measure
 -- analyze the yearly perfomamce of products by comparing each products sales to both its average sales performance and the previous years sales 
 
@@ -153,7 +153,7 @@ select order_year,
 from yearly_product_sales 
 order by product_name, order_year;
 
--- Part to whole analysis (how an individual category is contributing to the whole (measure/total measure)*100)
+-- PART TO WHOLE ANALYSIS (how an individual category is contributing to the whole (measure/total measure)*100)
 -- sales/total sales 
 -- quantity / total quantity
 
@@ -193,7 +193,7 @@ from category_sales
 order by 1 desc;
 
 
--- data segmentation
+-- DATA SEGMENTATION
 -- segment products inot cost ranges and count how many products fall into each segment
 with product_segments as (
 select 
@@ -251,7 +251,7 @@ select
   order by 2;
 
 
--- customer report
+-- CUSTOMER REPORT
 create view gold_report_customers as
 with base_query as (
 -- Base query to retrieve core columns from table
@@ -322,7 +322,7 @@ group by 1,2,3,4
 from customer_aggregation;
 
 
--- product report 
+--PRODUCT REPORT
 
 create view gold_products_report as 
 with base_query as (
